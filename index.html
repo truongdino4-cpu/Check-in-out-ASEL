@@ -273,17 +273,25 @@
                     g.gift ? "Có" : "Không"
                 ]);
 
-                let csvContent = "data:text/csv;charset=utf-8,\ufeff" 
-                    + headers.join(",") + "\n" 
-                    + rows.map(e => e.join(",")).join("\n");
-
-                const encodedUri = encodeURI(csvContent);
+                // Xử lý tối ưu cho Mobile (iPhone/Safari) bằng Blob thay vì Data URI
+                const csvContent = "\ufeff" + headers.join(",") + "\n" + rows.map(e => e.join(",")).join("\n");
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+                const url = URL.createObjectURL(blob);
+                
                 const link = document.createElement("a");
-                link.setAttribute("href", encodedUri);
+                link.setAttribute("href", url);
                 link.setAttribute("download", `Checkin_Report_${new Date().getTime()}.csv`);
+                
+                // Append vào DOM để đảm bảo click hoạt động trên iOS
                 document.body.appendChild(link);
                 link.click();
-                document.body.removeChild(link);
+                
+                // Xóa file tạm để giải phóng bộ nhớ
+                setTimeout(() => {
+                    document.body.removeChild(link);
+                    window.URL.revokeObjectURL(url);
+                }, 100);
+
                 showToast("Đã xuất file Excel (CSV) thành công!");
             };
 
