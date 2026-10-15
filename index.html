@@ -79,18 +79,56 @@
         const { useState, useEffect, useMemo, useRef } = React;
 
         const initialGuests = [
+            // CEO
             { id: 1, category: 'CEO', company: 'Phan Anh Living', name: 'A Phan Anh', phone: '', registered: true, checkIn: null, checkOut: null, gift: false },
             { id: 2, category: 'CEO', company: 'Trường Thắng', name: 'A Thành', phone: '0989000268', registered: true, checkIn: null, checkOut: null, gift: false },
             { id: 3, category: 'CEO', company: 'Alis', name: 'Sơn Alis', phone: '0947141713', registered: true, checkIn: null, checkOut: null, gift: false },
             { id: 4, category: 'CEO', company: 'Alis', name: 'Đức Alis', phone: '0983446899', registered: true, checkIn: null, checkOut: null, gift: false },
             { id: 5, category: 'CEO', company: 'PoliConcept', name: 'Anh Hưng', phone: '0929668666', registered: true, checkIn: null, checkOut: null, gift: false },
             { id: 6, category: 'CEO', company: 'Maison Décor', name: 'A Pho', phone: '', registered: true, checkIn: null, checkOut: null, gift: false },
-            { id: 7, category: 'CEO', company: 'Smarthome Nexus', name: 'Tùng Etron', phone: '0912979000', registered: true, checkIn: null, checkOut: null, gift: false },
-            { id: 8, category: 'SALE MANAGER', company: 'CARA Lighting', name: 'Trang Anh', phone: '', registered: true, checkIn: null, checkOut: null, gift: false },
-            { id: 9, category: 'SALE MANAGER', company: 'Long Khang', name: 'A Hoàng', phone: '0983203378', registered: true, checkIn: null, checkOut: null, gift: false },
-            { id: 10, category: 'SALE MANAGER', company: 'Unios Lighting', name: 'E Khanh', phone: '0966391656', registered: true, checkIn: null, checkOut: null, gift: false },
-            { id: 11, category: 'BEST SALE', company: 'Unios Lighting', name: 'E Ngọc', phone: '', registered: true, checkIn: null, checkOut: null, gift: false },
-            { id: 12, category: 'BEST SALE', company: 'Đèn Cavani', name: 'Thảo Phương', phone: '0938030145', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 7, category: 'CEO', company: 'CaraArchitect', name: 'A Kiến Quân', phone: '0934008909', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 8, category: 'CEO', company: 'CTH', name: 'A Toàn', phone: '0982290380', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 9, category: 'CEO', company: 'Bàn thờ', name: 'C Linh Bàn Thờ', phone: '', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 10, category: 'CEO', company: 'CBS', name: 'A Minh', phone: '0908152685', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 11, category: 'CEO', company: 'Charm', name: 'Thuỷ', phone: '', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 12, category: 'CEO', company: 'Sắt Mỹ Thuật KHP', name: 'C Loan', phone: '0937239386', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 13, category: 'CEO', company: 'In concept', name: 'Chị Thi', phone: '', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 14, category: 'CEO', company: 'Anh Khanh', name: 'Anh Khanh', phone: '0913130999', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 15, category: 'CEO', company: 'Nexus', name: 'Tùng Etron', phone: '0912979000', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 16, category: 'CEO', company: 'Ván sàn VIBE', name: 'E Bằng', phone: '0983888515', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 17, category: 'CEO', company: 'Độ Lọc Nước', name: 'Độ Lọc Nước', phone: '0848111011', registered: true, checkIn: null, checkOut: null, gift: false },
+
+            // SALE MANAGER
+            { id: 18, category: 'SALE MANAGER', company: 'CARA Lighting', name: 'Trang Anh', phone: '', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 19, category: 'SALE MANAGER', company: 'Long Khang', name: 'A Hoàng', phone: '0983203378', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 20, category: 'SALE MANAGER', company: 'Unios Lighting', name: 'E Khanh', phone: '0966391656', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 21, category: 'SALE MANAGER', company: 'PoliConcept', name: 'Quyên', phone: '', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 22, category: 'SALE MANAGER', company: 'Combitek', name: 'E Duy', phone: '0984361595', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 23, category: 'SALE MANAGER', company: 'Kara Windows', name: 'A Oai', phone: '', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 24, category: 'SALE MANAGER', company: 'Gamma', name: 'GĐ kD', phone: '0902201122', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 25, category: 'SALE MANAGER', company: 'Nam Long', name: 'Đông', phone: '0906923195', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 26, category: 'SALE MANAGER', company: 'Goldenduck', name: 'A Dũng', phone: '0902407587', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 27, category: 'SALE MANAGER', company: 'Nội Thất Kenli', name: 'Trường', phone: '0979660050', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 28, category: 'SALE MANAGER', company: 'Đồ rời D&A', name: 'A Thành', phone: '0938957729', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 29, category: 'SALE MANAGER', company: 'CBS', name: 'GĐKD', phone: '', registered: true, checkIn: null, checkOut: null, gift: false },
+
+            // BEST SALE
+            { id: 30, category: 'BEST SALE', company: 'Unios Lighting', name: 'E Ngọc', phone: '', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 31, category: 'BEST SALE', company: 'Đèn Cavani', name: 'Thảo Phương', phone: '0938030145', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 32, category: 'BEST SALE', company: 'Thầu cơ điện', name: 'A Tùng', phone: '', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 33, category: 'BEST SALE', company: 'Combitek', name: 'E Thành', phone: '', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 34, category: 'BEST SALE', company: 'Rèm Incanto', name: 'Nga', phone: '', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 35, category: 'BEST SALE', company: 'Rèm Incanto', name: 'E Khanh', phone: '0949850038', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 36, category: 'BEST SALE', company: 'Viên gạch Ý', name: 'Nam', phone: '0939307208', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 37, category: 'BEST SALE', company: 'Kara Windows', name: 'E Trọng', phone: '0988776081', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 38, category: 'BEST SALE', company: 'Kara Windows', name: 'E Quang', phone: '', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 39, category: 'BEST SALE', company: 'Daikin', name: 'E Khánh Linh', phone: '0942161710', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 40, category: 'BEST SALE', company: 'Khách mời', name: 'Chị Vy', phone: '', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 41, category: 'BEST SALE', company: 'Tạo', name: 'Tạo - Phan Anh', phone: '0326563566', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 42, category: 'BEST SALE', company: 'Ykk', name: 'Trinh', phone: '', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 43, category: 'BEST SALE', company: 'NLMT Intech', name: 'E Trang', phone: '0703869449', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 44, category: 'BEST SALE', company: 'B-smart', name: 'Phúc', phone: '0962089662', registered: true, checkIn: null, checkOut: null, gift: false },
+            { id: 45, category: 'BEST SALE', company: 'Carrara Stone', name: 'Tiệp', phone: '', registered: true, checkIn: null, checkOut: null, gift: false }
         ];
 
         const Toast = ({ message, type, onClose }) => {
@@ -173,8 +211,44 @@
 
         const App = () => {
             const [guests, setGuests] = useState(initialGuests);
-            const [activeTab, setActiveTab] = useState('checkin'); // Default to checkin for quick action
+            const [activeTab, setActiveTab] = useState('checkin');
             const [toast, setToast] = useState(null);
+
+            // Import modal state
+            const [showImport, setShowImport] = useState(false);
+            const [importText, setImportText] = useState('');
+
+            // Đưa toàn bộ State lên mức cao nhất để tránh lỗi crash trắng màn hình
+            const [searchTerm, setSearchTerm] = useState('');
+            
+            const [checkInName, setCheckInName] = useState('');
+            const [checkInCompany, setCheckInCompany] = useState('');
+            
+            const [checkOutStep, setCheckOutStep] = useState(1);
+            const [checkOutName, setCheckOutName] = useState('');
+            const [checkOutCompany, setCheckOutCompany] = useState('');
+            const [foundGuest, setFoundGuest] = useState(null);
+            const [giftReceived, setGiftReceived] = useState(false);
+
+            const [deleteStep, setDeleteStep] = useState(0); // 0, 1, 2, 3
+
+            const checkInSuggestions = useMemo(() => {
+                const query = checkInName.toLowerCase() || checkInCompany.toLowerCase();
+                if (!query) return [];
+                return guests.filter(g => 
+                    !g.checkIn && 
+                    (g.name.toLowerCase().includes(query) || g.company.toLowerCase().includes(query))
+                );
+            }, [checkInName, checkInCompany, guests]);
+
+            const checkOutSuggestions = useMemo(() => {
+                const query = checkOutName.toLowerCase() || checkOutCompany.toLowerCase();
+                if (!query) return [];
+                return guests.filter(g => 
+                    !g.checkOut && 
+                    (g.name.toLowerCase().includes(query) || g.company.toLowerCase().includes(query))
+                );
+            }, [checkOutName, checkOutCompany, guests]);
 
             const showToast = (message, type = 'success') => {
                 setToast({ message, type });
@@ -213,9 +287,164 @@
                 showToast("Đã xuất file Excel (CSV) thành công!");
             };
 
-            const renderList = () => {
-                const [searchTerm, setSearchTerm] = useState('');
+            const handleProceedDelete = () => {
+                if (deleteStep === 3) {
+                    // Xóa hoàn toàn: reset về initialGuests, xóa bỏ những người thêm ngoài và reset toàn bộ giờ checkin/checkout
+                    const resetGuests = initialGuests.map(g => ({
+                        ...g,
+                        checkIn: null,
+                        checkOut: null,
+                        gift: false
+                    }));
+                    setGuests(resetGuests);
+                    setDeleteStep(0);
+                    setCheckInName(''); setCheckInCompany('');
+                    setCheckOutName(''); setCheckOutCompany('');
+                    setCheckOutStep(1); setFoundGuest(null);
+                    showToast("Đã XÓA SẠCH toàn bộ dữ liệu Check-in/out!", "success");
+                } else {
+                    setDeleteStep(deleteStep + 1);
+                }
+            };
+
+            const renderDeleteModal = () => {
+                if (deleteStep === 0) return null;
+
+                const messages = [
+                    "",
+                    "Bạn có chắc chắn muốn làm trống dữ liệu Sự Kiện? Mọi thông tin Check-in và Check-out sẽ bị xóa.",
+                    "CẢNH BÁO: Toàn bộ danh sách Khách Mới được thêm tại sự kiện cũng sẽ bị xóa. Bạn vẫn muốn tiếp tục?",
+                    "CẢNH BÁO CUỐI: Hành động này KHÔNG THỂ HOÀN TÁC. Khách chưa xuất file Excel sẽ mất trắng dữ liệu!"
+                ];
                 
+                const btnStyles = [
+                    "",
+                    "bg-orange-500 hover:bg-orange-600 shadow-orange-500/30",
+                    "bg-red-500 hover:bg-red-600 shadow-red-500/30",
+                    "bg-red-700 hover:bg-red-800 shadow-red-700/40 animate-pulse"
+                ];
+
+                return (
+                    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-brand-text/40 backdrop-blur-sm p-4 animate-fade-in">
+                        <div className="bg-white rounded-2xl p-6 w-full max-w-sm shadow-2xl border border-gray-100">
+                            <div className="text-center mb-6">
+                                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-50 text-red-500 mb-3">
+                                    <i className="fas fa-exclamation-triangle text-3xl"></i>
+                                </div>
+                                <h3 className="text-lg font-bold text-brand-text">Xác nhận xóa ({deleteStep}/3)</h3>
+                                <p className="text-sm text-brand-light mt-2">{messages[deleteStep]}</p>
+                            </div>
+                            <div className="flex space-x-3">
+                                <button onClick={() => setDeleteStep(0)} className="flex-1 py-3 bg-gray-100 text-brand-text font-bold rounded-xl hover:bg-gray-200 transition-colors">
+                                    Hủy bỏ
+                                </button>
+                                <button onClick={handleProceedDelete} className={`flex-1 py-3 text-white font-bold rounded-xl shadow-lg transition-all ${btnStyles[deleteStep]}`}>
+                                    {deleteStep === 3 ? "XÓA NGAY" : "Tiếp tục xóa"}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                );
+            };
+
+            const renderImportModal = () => {
+                if (!showImport) return null;
+
+                const handlePasteImport = () => {
+                    if (!importText.trim()) {
+                        showToast("Vui lòng dán dữ liệu", "error");
+                        return;
+                    }
+                    try {
+                        const lines = importText.trim().split('\n');
+                        const newGuests = lines.map((line, idx) => {
+                            const cols = line.split('\t').map(c => c.trim());
+                            
+                            let category = 'KHÁCH MỚI';
+                            let company = '';
+                            let name = '';
+                            let phone = '';
+
+                            if (cols.length >= 4) {
+                                category = cols[0];
+                                company = cols[1];
+                                name = cols[2];
+                                phone = cols[3] || '';
+                            } else if (cols.length === 3) {
+                                company = cols[0];
+                                name = cols[1];
+                                phone = cols[2] || '';
+                            } else {
+                                name = cols[0] || '';
+                                company = cols[1] || 'Khách vãng lai';
+                            }
+
+                            return {
+                                id: Date.now() + idx,
+                                category: category,
+                                company: company,
+                                name: name,
+                                phone: phone,
+                                registered: true,
+                                checkIn: null,
+                                checkOut: null,
+                                gift: false
+                            };
+                        }).filter(g => g.name);
+
+                        if (newGuests.length > 0) {
+                            setGuests([...guests, ...newGuests]);
+                            showToast(`Đã thêm ${newGuests.length} khách!`, "success");
+                            setShowImport(false);
+                            setImportText('');
+                        }
+                    } catch (e) {
+                        showToast("Lỗi khi đọc dữ liệu", "error");
+                    }
+                };
+
+                return (
+                    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-brand-text/40 backdrop-blur-sm p-4 animate-fade-in">
+                        <div className="bg-white rounded-2xl w-full max-w-md shadow-2xl flex flex-col max-h-[80vh] overflow-hidden border border-gray-100">
+                            <div className="p-4 border-b flex justify-between items-center bg-gray-50">
+                                <div className="flex items-center space-x-2 text-green-600">
+                                    <i className="fas fa-file-excel text-xl"></i>
+                                    <h3 className="font-bold text-brand-text">Nhập từ Excel</h3>
+                                </div>
+                                <button onClick={() => setShowImport(false)} className="text-gray-400 hover:text-gray-600">
+                                    <i className="fas fa-times text-xl"></i>
+                                </button>
+                            </div>
+                            
+                            <div className="p-4 overflow-y-auto">
+                                <div className="bg-blue-50 text-brand-primary p-3 rounded-lg text-[13px] mb-4 leading-relaxed">
+                                    <strong>Hướng dẫn:</strong><br/>
+                                    1. Mở file Excel danh sách khách.<br/>
+                                    2. Bôi đen và Copy 4 cột: <b>Hạng mục | Công ty | Khách mời | SĐT</b><br/>
+                                    3. Dán (Paste) vào ô bên dưới.
+                                </div>
+                                <textarea 
+                                    value={importText}
+                                    onChange={(e) => setImportText(e.target.value)}
+                                    className="w-full h-40 p-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500/50 focus:border-green-500 outline-none text-sm text-gray-700 whitespace-pre shadow-inner bg-gray-50/50"
+                                    placeholder="Dán dữ liệu từ Excel vào đây..."
+                                ></textarea>
+                            </div>
+                            
+                            <div className="p-4 border-t flex space-x-3 bg-white">
+                                <button onClick={() => setShowImport(false)} className="flex-1 py-3 bg-gray-100 text-gray-700 font-bold rounded-xl hover:bg-gray-200 transition-colors">
+                                    Hủy
+                                </button>
+                                <button onClick={handlePasteImport} className="flex-1 py-3 bg-green-500 text-white font-bold rounded-xl hover:bg-green-600 shadow-lg shadow-green-500/30 transition-colors">
+                                    Xác nhận nhập
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                );
+            };
+
+            const renderList = () => {
                 const filteredGuests = guests.filter(g => 
                     g.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
                     g.company.toLowerCase().includes(searchTerm.toLowerCase())
@@ -241,7 +470,6 @@
                         <div className="flex-1 overflow-y-auto space-y-2.5">
                             {filteredGuests.map(guest => (
                                 <div key={guest.id} className="liquid-glass p-3 rounded-xl flex items-center justify-between relative overflow-hidden transition-all hover:shadow-md">
-                                    {/* Left Status Bar */}
                                     <div className="absolute left-0 top-0 bottom-0 w-1 flex flex-col">
                                         <div className={`flex-1 ${guest.checkIn ? 'bg-green-400' : 'bg-gray-200'}`}></div>
                                         <div className={`flex-1 ${guest.checkOut ? 'bg-brand-primary' : 'bg-gray-200'}`}></div>
@@ -278,32 +506,20 @@
             };
 
             const renderCheckIn = () => {
-                const [name, setName] = useState('');
-                const [company, setCompany] = useState('');
-
-                const suggestions = useMemo(() => {
-                    const query = name.toLowerCase() || company.toLowerCase();
-                    if (!query) return [];
-                    return guests.filter(g => 
-                        !g.checkIn && 
-                        (g.name.toLowerCase().includes(query) || g.company.toLowerCase().includes(query))
-                    );
-                }, [name, company, guests]);
-
                 const handleSelectSuggestion = (guest) => {
-                    setName(guest.name);
-                    setCompany(guest.company);
+                    setCheckInName(guest.name);
+                    setCheckInCompany(guest.company);
                 };
 
                 const handleSubmit = () => {
-                    if (!name.trim() || !company.trim()) {
+                    if (!checkInName.trim() || !checkInCompany.trim()) {
                         showToast("Vui lòng nhập đầy đủ Tên và Công ty", "error");
                         return;
                     }
 
                     const guestIndex = guests.findIndex(g => 
-                        g.name.toLowerCase() === name.trim().toLowerCase() && 
-                        g.company.toLowerCase() === company.trim().toLowerCase()
+                        g.name.toLowerCase() === checkInName.trim().toLowerCase() && 
+                        g.company.toLowerCase() === checkInCompany.trim().toLowerCase()
                     );
 
                     if (guestIndex >= 0) {
@@ -311,16 +527,19 @@
                             showToast("Khách này đã check-in trước đó!", "error");
                             return;
                         }
-                        const newGuests = [...guests];
-                        newGuests[guestIndex].checkIn = getExactTime();
+                        
+                        // Sửa lỗi tham chiếu mảng: Tạo mảng mới và object mới thay vì gán đè
+                        const newGuests = guests.map((g, idx) => 
+                            idx === guestIndex ? { ...g, checkIn: getExactTime() } : g
+                        );
                         setGuests(newGuests);
                         showToast(`Check-in thành công: ${guests[guestIndex].name}`, "success");
                     } else {
                         const newGuest = {
                             id: Date.now(),
                             category: 'KHÁCH NGOÀI',
-                            company: company.trim(),
-                            name: name.trim(),
+                            company: checkInCompany.trim(),
+                            name: checkInName.trim(),
                             phone: '',
                             registered: false,
                             checkIn: getExactTime(),
@@ -328,11 +547,11 @@
                             gift: false
                         };
                         setGuests([...guests, newGuest]);
-                        showToast(`Đã thêm & Check-in khách mới: ${name}`, "success");
+                        showToast(`Đã thêm & Check-in khách mới: ${checkInName}`, "success");
                     }
                     
-                    setName('');
-                    setCompany('');
+                    setCheckInName('');
+                    setCheckInCompany('');
                 };
 
                 return (
@@ -350,20 +569,20 @@
                                 label="Tên khách mời" 
                                 icon="fa-user" 
                                 placeholder="Nhập hoặc chọn tên..." 
-                                value={name} 
-                                onChange={setName}
+                                value={checkInName} 
+                                onChange={setCheckInName}
                                 onSelect={handleSelectSuggestion}
-                                suggestions={suggestions}
+                                suggestions={checkInSuggestions}
                             />
                             
                             <AutocompleteInput 
                                 label="Tên công ty" 
                                 icon="fa-building" 
                                 placeholder="Nhập hoặc chọn công ty..." 
-                                value={company} 
-                                onChange={setCompany}
+                                value={checkInCompany} 
+                                onChange={setCheckInCompany}
                                 onSelect={handleSelectSuggestion}
-                                suggestions={suggestions}
+                                suggestions={checkInSuggestions}
                             />
 
                             <button 
@@ -378,37 +597,22 @@
             };
 
             const renderCheckOut = () => {
-                const [step, setStep] = useState(1);
-                const [name, setName] = useState('');
-                const [company, setCompany] = useState('');
-                const [foundGuest, setFoundGuest] = useState(null);
-                const [giftReceived, setGiftReceived] = useState(false);
-
-                const suggestions = useMemo(() => {
-                    const query = name.toLowerCase() || company.toLowerCase();
-                    if (!query) return [];
-                    return guests.filter(g => 
-                        !g.checkOut && 
-                        (g.name.toLowerCase().includes(query) || g.company.toLowerCase().includes(query))
-                    );
-                }, [name, company, guests]);
-
                 const handleSelectSuggestion = (guest) => {
-                    setName(guest.name);
-                    setCompany(guest.company);
+                    setCheckOutName(guest.name);
+                    setCheckOutCompany(guest.company);
                 };
 
                 const handleSearch = () => {
-                    if (!name.trim() || !company.trim()) {
+                    if (!checkOutName.trim() || !checkOutCompany.trim()) {
                         showToast("Vui lòng nhập đầy đủ thông tin", "error");
                         return;
                     }
                     const guest = guests.find(g => 
-                        g.name.toLowerCase() === name.trim().toLowerCase() && 
-                        g.company.toLowerCase() === company.trim().toLowerCase()
+                        g.name.toLowerCase() === checkOutName.trim().toLowerCase() && 
+                        g.company.toLowerCase() === checkOutCompany.trim().toLowerCase()
                     );
                     setFoundGuest(guest || null);
-                    setStep(2);
+                    setCheckOutStep(2);
                     setGiftReceived(false);
                 };
 
@@ -435,8 +639,8 @@
                         const newGuest = {
                             id: Date.now(),
                             category: 'KHÁCH NGOÀI',
-                            company: company.trim(),
-                            name: name.trim(),
+                            company: checkOutCompany.trim(),
+                            name: checkOutName.trim(),
                             phone: '',
                             registered: false,
                             checkIn: null, 
@@ -444,16 +648,16 @@
                             gift: false
                         };
                         setGuests([...guests, newGuest]);
-                        showToast(`Đã ghi nhận Check-out khách mới: ${name}`, "success");
+                        showToast(`Đã ghi nhận Check-out khách mới: ${checkOutName}`, "success");
                     }
 
-                    setStep(1);
-                    setName('');
-                    setCompany('');
+                    setCheckOutStep(1);
+                    setCheckOutName('');
+                    setCheckOutCompany('');
                     setFoundGuest(null);
                 };
 
-                if (step === 1) {
+                if (checkOutStep === 1) {
                     return (
                         <div className="flex flex-col h-full animate-fade-in py-2 relative z-10">
                             <div className="liquid-glass p-6 rounded-2xl">
@@ -469,20 +673,20 @@
                                     label="Tên khách mời" 
                                     icon="fa-user" 
                                     placeholder="Nhập tên..." 
-                                    value={name} 
-                                    onChange={setName}
+                                    value={checkOutName} 
+                                    onChange={setCheckOutName}
                                     onSelect={handleSelectSuggestion}
-                                    suggestions={suggestions}
+                                    suggestions={checkOutSuggestions}
                                 />
                                 
                                 <AutocompleteInput 
                                     label="Tên công ty" 
                                     icon="fa-building" 
                                     placeholder="Nhập công ty..." 
-                                    value={company} 
-                                    onChange={setCompany}
+                                    value={checkOutCompany} 
+                                    onChange={setCheckOutCompany}
                                     onSelect={handleSelectSuggestion}
-                                    suggestions={suggestions}
+                                    suggestions={checkOutSuggestions}
                                 />
 
                                 <button 
@@ -499,13 +703,13 @@
                 return (
                     <div className="flex flex-col h-full animate-fade-in py-2 relative z-10">
                         <div className="liquid-glass p-6 rounded-2xl">
-                            <button onClick={() => setStep(1)} className="text-brand-light mb-4 flex items-center space-x-2 text-sm hover:text-brand-primary font-medium transition-colors">
+                            <button onClick={() => setCheckOutStep(1)} className="text-brand-light mb-4 flex items-center space-x-2 text-sm hover:text-brand-primary font-medium transition-colors">
                                 <i className="fas fa-arrow-left"></i> <span>Quay lại tìm kiếm</span>
                             </button>
 
                             <div className="bg-white/50 p-4 rounded-xl mb-6 border border-white shadow-sm">
-                                <h3 className="text-lg font-bold text-brand-text">{name}</h3>
-                                <p className="text-brand-primary text-sm font-medium">{company}</p>
+                                <h3 className="text-lg font-bold text-brand-text">{checkOutName}</h3>
+                                <p className="text-brand-primary text-sm font-medium">{checkOutCompany}</p>
                                 
                                 <div className="mt-3 inline-block">
                                     {(foundGuest && foundGuest.registered) ? (
@@ -568,14 +772,14 @@
 
             return (
                 <div className="h-screen flex flex-col max-w-md mx-auto relative bg-[#F3F6F9] overflow-hidden">
-                    {/* Decorative Background Blobs for Liquid Effect */}
                     <div className="bg-blob bg-blue-300 w-64 h-64 top-[-10%] left-[-20%]"></div>
                     <div className="bg-blob bg-cyan-200 w-72 h-72 top-[30%] right-[-30%]"></div>
                     <div className="bg-blob bg-indigo-200 w-80 h-80 bottom-[-10%] left-[10%]"></div>
 
                     {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}
+                    {renderDeleteModal()}
+                    {renderImportModal()}
                     
-                    {/* Header */}
                     <header className="px-4 py-4 relative z-20">
                         <div className="flex items-center justify-between mb-4">
                             <div className="flex items-center space-x-3">
@@ -587,12 +791,19 @@
                                     <p className="text-[10px] text-brand-primary font-bold uppercase tracking-widest">Event Portal</p>
                                 </div>
                             </div>
-                            <button onClick={exportToCSV} className="text-brand-primary hover:text-white hover:bg-brand-primary transition-all p-2 bg-white rounded-xl w-10 h-10 flex items-center justify-center shadow-sm border border-gray-100">
-                                <i className="fas fa-file-excel"></i>
-                            </button>
+                            <div className="flex space-x-2">
+                                <button onClick={() => setShowImport(true)} className="text-green-600 hover:text-white hover:bg-green-600 transition-all p-2 bg-white rounded-xl w-10 h-10 flex items-center justify-center shadow-sm border border-green-100" title="Nhập danh sách từ Excel">
+                                    <i className="fas fa-file-import"></i>
+                                </button>
+                                <button onClick={() => setDeleteStep(1)} className="text-red-500 hover:text-white hover:bg-red-500 transition-all p-2 bg-white rounded-xl w-10 h-10 flex items-center justify-center shadow-sm border border-red-100" title="Xóa dữ liệu">
+                                    <i className="fas fa-trash-alt"></i>
+                                </button>
+                                <button onClick={exportToCSV} className="text-brand-primary hover:text-white hover:bg-brand-primary transition-all p-2 bg-white rounded-xl w-10 h-10 flex items-center justify-center shadow-sm border border-gray-100" title="Xuất Excel">
+                                    <i className="fas fa-file-excel"></i>
+                                </button>
+                            </div>
                         </div>
 
-                        {/* Top Large Navigation Tabs */}
                         <div className="liquid-glass p-1.5 rounded-2xl flex space-x-1 shadow-sm">
                             <button 
                                 onClick={() => setActiveTab('list')} 
@@ -618,14 +829,12 @@
                         </div>
                     </header>
 
-                    {/* Main Content Area */}
                     <main className="flex-1 overflow-y-auto px-4 relative z-10 pb-6">
                         {activeTab === 'list' && renderList()}
                         {activeTab === 'checkin' && renderCheckIn()}
                         {activeTab === 'checkout' && renderCheckOut()}
                     </main>
                     
-                    {/* Add safe area padding for iPhone X and newer */}
                     <div style={{ paddingBottom: 'env(safe-area-inset-bottom)' }} className="relative z-10 bg-transparent"></div>
                 </div>
             );
